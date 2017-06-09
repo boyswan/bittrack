@@ -1,20 +1,13 @@
 import React from 'react'
 import { StyleSheet, FlatList, View, Text, Button } from 'react-native'
+import { AllMarketList } from '../modules'
 
 const Home = () => (
   <View style={styles.container}>
     <Text> Home </Text>
-    <FlatList
-      data={[{ key: 'a' }, { key: 'b' }]}
-      renderItem={({ item }) => <Text>{item.key}</Text>}
-    />
+    <AllMarketList />
   </View>
 )
-
-// Home.navigationOptions = ({ navigation: { navigate } }) => ({
-//   // headerLeft: <Logo />,
-//   headerRight: <Button title="click" onPress={() => navigate('Page')} />
-// })
 
 export default Home
 

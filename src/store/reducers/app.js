@@ -1,9 +1,11 @@
-import { createReducer } from '../../utils'
+import createReducer from '../../utils/createReducer'
+import { evolve, always } from 'ramda'
 
 const init = {
-  test: ''
+  test: '',
+  allMarkets: []
 }
 
 export default createReducer(init, {
-  TOGGLE_INTEREST: (action, state) => state => {}
+  MARKETS_SET: ({ payload }) => evolve({ allMarkets: always(payload) })
 })

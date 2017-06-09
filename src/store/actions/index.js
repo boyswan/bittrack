@@ -1,7 +1,6 @@
-// import { createActions } from '../../utils'
-import { store } from '../../store'
-console.log('store', store)
-export default {
-  marketsGet: () => {}
-}
-// export default createActions(store)(['marketsGet'])
+import createActions from '../../utils/createActions'
+
+const globalActions = ['hydrate']
+const marketActions = ['marketsGet']
+
+export default createActions([...globalActions, ...marketActions])

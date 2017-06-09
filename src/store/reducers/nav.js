@@ -1,6 +1,6 @@
 import { NavigationActions } from 'react-navigation'
 
-import { AppNavigator } from '../../index'
+import AppNavigator from '../../navigator'
 
 // Start with two routes: The Main screen, with the Login screen on top.
 const firstAction = AppNavigator.router.getActionForPathAndParams('Home')
@@ -13,7 +13,7 @@ const initialNavState = AppNavigator.router.getStateForAction(
 
 const nav = (state = initialNavState, action) => {
   let nextState
-  // console.log('action', action)
+
   switch (action.type) {
     case 'Login':
       nextState = AppNavigator.router.getStateForAction(

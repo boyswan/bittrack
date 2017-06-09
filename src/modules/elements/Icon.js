@@ -7,9 +7,9 @@ const Logo = ({ type, onPress }) => (
       source={(() => {
         switch (type) {
           case 'logo':
-            return require(`../images/logo.png`)
+            return require(`../../images/logo.png`)
           case 'search':
-            return require(`../images/search.png`)
+            return require(`../../images/search.png`)
         }
       })()}
     />
