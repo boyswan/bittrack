@@ -13,15 +13,11 @@ const action = type => payload => put({ type, payload })
 const marketsSet = action('MARKETS_SET')
 
 function* marketsGet() {
-  try {
-    const { data } = yield call(
-      fetch,
-      'https://api.coinmarketcap.com/v1/ticker/?convert=EUR'
-    )
-    yield marketsSet(data)
-  } catch (e) {
-    console.log(e)
-  }
+  const { data } = yield call(
+    fetch,
+    'https://api.coinmarketcap.com/v1/ticker/?convert=EUR'
+  )
+  yield marketsSet(data)
 }
 
 function* navigation() {
@@ -42,6 +38,5 @@ function* hydrate() {
 }
 
 export default function* root() {
-  yield fork(hydrate)
-  // yield all(...[fork(hydrate), fork(navigation)])
+  yield all([fork(hydrate), fork(navigation)])
 }

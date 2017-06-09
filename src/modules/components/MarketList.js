@@ -9,7 +9,10 @@ const Item = ({ item }) => (
         uri: `https://files.coinmarketcap.com/static/img/coins/128x128/${item.id}.png`
       }}
     />
-    <Text>{item.key}</Text>
+    <Text>{item.rank}</Text>
+    <Text>{item.symbol}</Text>
+    <Text>{item.name}</Text>
+    <Text>{item['price_usd']}</Text>
   </View>
 )
 const MarketList = ({ allMarkets }) =>
